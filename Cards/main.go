@@ -1,18 +1,30 @@
 package main
 
-import "fmt"
+// func main() {
+// 	card := newCard()
 
-// We can initialize a variable outside of a function, we just can't assign a value to it.
-var deckSize int
+// 	fmt.Println(card)
+// }
 
-// deckSize := 20 // error
-
-func main() {
-	deckSize = 50
-	// var card string = "Ace of Spades"
-	card := "Ace of Spades"
-
-	card = "Five of Diamonds"
-	fmt.Println(card)
-	fmt.Println(deckSize)
+func newCard() string {
+	return "Five of Diamonds"
 }
+
+// Slice
+func main() {
+	cards := deck{"Ace of Diamonds", newCard()}
+	cards = append(cards, "Six of Spades")
+
+	cards.print()
+}
+
+// type book string
+
+// func (b book) printBook() {
+// 	fmt.Println(b)
+// }
+
+// func main() {
+// 	var b book = "Harry Potter"
+// 	b.printBook()
+// }
