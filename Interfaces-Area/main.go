@@ -5,7 +5,7 @@ import (
 )
 
 type shape interface {
-	printArea()
+	getArea() float64
 }
 
 type square struct {
@@ -23,6 +23,10 @@ func main() {
 
 	t := triangle{5.2, 4.4}
 	t.printArea()
+
+	printArea(s)
+	printArea(t)
+
 }
 
 func (s square) getArea() float64 {
@@ -39,4 +43,8 @@ func (t triangle) getArea() float64 {
 
 func (t triangle) printArea() {
 	fmt.Println(t.getArea())
+}
+
+func printArea(s shape) {
+	fmt.Println(s.getArea())
 }
